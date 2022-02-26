@@ -1,10 +1,4 @@
-FROM python:3.10
-
-RUN pip install Flask gunicorn
-
-COPY src/ /app
-WORKDIR /app
-
-ENV PORT 8080
-
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app
+FROM tiangolo/meinheld-gunicorn-flask:python3.8
+COPY requirements.txt /
+RUN pip install -r /requirements.txt
+COPY app /app
