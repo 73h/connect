@@ -20,7 +20,7 @@ gcloud init
 #### Firebase
 
 ```
-npm init -y # creates a package.json
+npm init -y
 npm install -D firebase-tools
 ```
 
